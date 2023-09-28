@@ -1,9 +1,10 @@
 import { useState } from "react";
 
-function Form() {
+function Form({ addUser }) {
   const [fname, setfName] = useState("");
   const [lname, setlName] = useState("");
   const [email, setemail] = useState("");
+  // const [count, setcount] = useState(0);
 
   const handlefname = (e) => {
     setfName(e.target.value);
@@ -22,6 +23,14 @@ function Form() {
 
   const formSubmit = (e) => {
     e.preventDefault();
+    // setcount(count + 1)
+    const user = {
+      id: Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000,
+      fname,
+      lname,
+      email,
+    };
+    addUser(user);
     setfName("");
     setlName("");
     setemail("");
