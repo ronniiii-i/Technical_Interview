@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Form({ addUser }) {
+function Form({ users, addUser, updateUsers, editingUser }) {
   const [fname, setfName] = useState("");
   const [lname, setlName] = useState("");
   const [email, setemail] = useState("");
   // const [count, setcount] = useState(0);
+
+  useEffect(() => {
+    if (editingUser) {
+      setfName(editingUser.fname);
+      setlName(editingUser.lname);
+      setemail(editingUser.email);
+    }
+  }, [editingUser]);
 
   const handlefname = (e) => {
     setfName(e.target.value);
@@ -24,13 +32,21 @@ function Form({ addUser }) {
   const formSubmit = (e) => {
     e.preventDefault();
     // setcount(count + 1)
-    const user = {
-      id: Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000,
-      fname,
-      lname,
-      email,
-    };
-    addUser(user);
+    if (editingUser) {
+      const updatedUsers = users.map((user) =>
+        user.id === editingUser.id ? { ...user, fname, lname, email } : user
+      );
+      updateUsers(updatedUsers)
+      localStorage.setItem("users", JSON.stringify(updatedUsers));
+    } else {
+      const user = {
+        id: Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000,
+        fname,
+        lname,
+        email,
+      };
+      addUser(user);
+    }
     setfName("");
     setlName("");
     setemail("");
@@ -57,8 +73,8 @@ function Form({ addUser }) {
           value={email}
           onChange={handleemail}
         />
-        <button className="button" disabled={!isFormValid}>
-          Submit
+        <button className="button button-primary" disabled={!isFormValid}>
+          {editingUser ? "Update" : "Submit"}
         </button>
       </form>
     </section>

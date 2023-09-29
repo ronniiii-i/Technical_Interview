@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-
-function Table({ users, deleteUser }) {
+function Table({ users, editUser, deleteUser }) {
   return (
     <section className="table">
       <div className="grid g-by4">
@@ -15,8 +13,8 @@ function Table({ users, deleteUser }) {
             <p>{user.fname}</p>
             <p>{user.lname}</p>
             <p>{user.email}</p>
-            <div className="action">
-              <button>
+            <div className="action flex justify-center">
+              <button onClick={() => editUser(user.id)}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
@@ -30,6 +28,7 @@ function Table({ users, deleteUser }) {
                   xmlns="http://www.w3.org/2000/svg"
                   height="1em"
                   viewBox="0 0 512 512"
+                  type="del"
                 >
                   <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM184 232H328c13.3 0 24 10.7 24 24s-10.7 24-24 24H184c-13.3 0-24-10.7-24-24s10.7-24 24-24z" />
                 </svg>
