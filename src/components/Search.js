@@ -12,7 +12,6 @@ function Search({ handleSearch }) {
 
   return (
     <section className="search flex column align-center justify-center">
-      {/* <h3>Search</h3> */}
       <input
         type="text"
         placeholder="Search by name or email"

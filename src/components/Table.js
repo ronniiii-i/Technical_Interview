@@ -7,9 +7,9 @@ function Table({ users, filtered, det, searched, editUser, deleteUser }) {
         <h3>Email</h3>
         <h3>Action</h3>
       </div>
-      {searched === true && det === "not" ? (
-        <h3>Search not found</h3>
-      ) : searched === true && det === "filtered" ? (
+      {searched && det === "not" ? (
+        <h3>user not found</h3>
+      ) : searched && det === "filtered" ? (
         filtered.map((user) => (
           <div key={user.id} className="grid g-by4">
             <p>{user.fname}</p>
@@ -68,7 +68,7 @@ function Table({ users, filtered, det, searched, editUser, deleteUser }) {
           </div>
         ))
       ) : (
-        <h3>No Users</h3>
+        <h3>No user found</h3>
       )}
     </section>
   );

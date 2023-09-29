@@ -68,7 +68,7 @@ function Form({ users, addUser, updateUsers, editingUser }) {
           onChange={handlelname}
         />
         <input
-          type="text"
+          type="email"
           placeholder="Email address"
           value={email}
           onChange={handleemail}
