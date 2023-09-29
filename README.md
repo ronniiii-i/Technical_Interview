@@ -1,31 +1,74 @@
-# Create React App
+# Technical Test - User Management Application
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+A simple React-based user management application that allows you to add, edit, delete, and search users. This application serves as a basic example of how to create a CRUD (Create, Read, Update, Delete) application using React.
 
-## Deploy Your Own
+## Table of Contents
 
-Deploy your own Create React App project with Vercel.
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
+## Features
 
-_Live Example: https://create-react-template.vercel.app/_
+- Add a new user with first name, last name, and email.
+- Edit existing user information.
+- Delete users from the list.
+- Search for users by first name, last name, or email.
+- Display a "Can't be found" message when no search results are found.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you begin, ensure you have met the following requirements:
 
-### `npm start`
+- Node.js and npm installed on your machine.
 
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Getting Started
 
-The page will reload when you make changes. You may also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```bash
+   git clone https://github.com/yourusername/user-management-app.git
+   ```
 
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
 
-### `npm run build`
+    ```bash
+    cd user-management-app
+    ```
 
-Builds the app for production to the `build` folder.
+3. Install dependencies:
 
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+1. Run the application:
+
+    ```bash
+    npm start
+    ```
+
+    This will start the development server and open the application in your default web browser. You can access it at <http://localhost:3000>.
+
+2. Use the application to manage users:
+
+    - Add new users by filling in the form and clicking "Submit."
+    - Edit user information by clicking the edit icon in the table.
+    - Delete users by clicking the delete icon in the table.
+    - Search for users by entering a search term in the search input field.
+
+## Contributing
+
+Contributions are welcome! Here are the steps to contribute:
+
+1. Fork the project.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push your changes to your fork.
+5. Submit a pull request to the original repository.
+
+Please ensure your code adheres to the project's coding standards.
