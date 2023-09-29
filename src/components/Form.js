@@ -36,7 +36,7 @@ function Form({ users, addUser, updateUsers, editingUser }) {
       const updatedUsers = users.map((user) =>
         user.id === editingUser.id ? { ...user, fname, lname, email } : user
       );
-      updateUsers(updatedUsers)
+      updateUsers(updatedUsers);
       localStorage.setItem("users", JSON.stringify(updatedUsers));
     } else {
       const user = {
@@ -54,6 +54,7 @@ function Form({ users, addUser, updateUsers, editingUser }) {
 
   return (
     <section className="form">
+      <h2>Technical Test</h2>
       <form onSubmit={formSubmit}>
         <input
           type="text"

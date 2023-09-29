@@ -1,7 +1,7 @@
 function Table({ users, filtered, det, searched, editUser, deleteUser }) {
   return (
     <section className="table">
-      <div className="grid g-by4">
+      <div className="grid g-by4 align-center">
         <h3>First Name</h3>
         <h3>Last Name</h3>
         <h3>Email</h3>
@@ -11,7 +11,7 @@ function Table({ users, filtered, det, searched, editUser, deleteUser }) {
         <h3>user not found</h3>
       ) : searched && det === "filtered" ? (
         filtered.map((user) => (
-          <div key={user.id} className="grid g-by4">
+          <div key={user.id} className="grid g-by4 align-center">
             <p>{user.fname}</p>
             <p>{user.lname}</p>
             <p>{user.email}</p>
@@ -40,7 +40,7 @@ function Table({ users, filtered, det, searched, editUser, deleteUser }) {
         ))
       ) : users.length > 0 ? (
         users.map((user) => (
-          <div key={user.id} className="grid g-by4">
+          <div key={user.id} className="grid g-by4 align-center">
             <p>{user.fname}</p>
             <p>{user.lname}</p>
             <p>{user.email}</p>
